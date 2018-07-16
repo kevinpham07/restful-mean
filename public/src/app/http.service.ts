@@ -7,23 +7,22 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
 	constructor( private _http: HttpClient ) {
-  	this.getTask();
-  	this.getShow();
-  	this.getDelete();
 	}
 	getTask(){
 		
-		const observable = this._http.get('/task');
-		observable.subscribe(data => {
-			console.log("Got our tasks!", data)
-		});
+		// const observable = this._http.get('/task');
+		// observable.subscribe(data => {
+		// 	console.log("Got our tasks!", data)
+		// });
+		return this._http.get('/task');
 	}
-	getShow(id = "5b4793f023d58a12a8f69546"){
+	getShow(id){
 		
-		const observable = this._http.get('/task/' + id);
-		observable.subscribe(data => {
-			console.log("Tasks with id!", data)
-		});
+		// const observable = this._http.get('/task/' + id);
+		// observable.subscribe(data => {
+		// 	console.log("Tasks with id!", data)
+		// });
+		return this._http.get('/task/'+ id);
 	}
 	getDelete(id = "5b4793f023d58a12a8f69546"){
 		
